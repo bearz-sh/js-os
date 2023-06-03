@@ -1,0 +1,22 @@
+{
+    "exclude": [
+        ".eng",
+        "npm",
+        ".artifacts"
+    ],
+    "fmt": {
+        "indentWidth": 4,
+        "lineWidth": 120,
+        "semiColons": true
+    },
+    "compilerOptions": {
+        "lib": [
+            "deno.window",
+        ]
+    },
+    "tasks": {
+        "dnt": "deno run --allow-all --unstable ./.eng/dnt.ts",
+        "test": "deno test --allow-all --unstable --coverage=./.artifacts/cov",
+        "cov": "deno coverage --unstable --lcov  --output=./.artifacts/mod.lcov ./.artifacts/cov"
+    }
+}
